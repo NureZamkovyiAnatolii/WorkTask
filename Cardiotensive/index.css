@@ -161,6 +161,7 @@ nav a:hover {
 }
 .nav-mobile{
     display:none;
+    justify-content: space-between; /* Розподіл елементів між краями контейнера */
 }
 
 /* Оновлені стилі для адаптивності */
@@ -173,6 +174,32 @@ nav a:hover {
         max-width: 90%;
     }
 }
+/* Лівий блок: логотип і текст */
+.nav-left-mobile {
+    display: flex;
+    align-items: center;
+    position: relative;
+    top:20px;
+}
+
+/* Лого */
+.nav-left-mobile .logo {
+    max-height: 30px;
+    margin-right: 10px;
+}
+
+/* Текст логотипа */
+.nav-left-mobile .logotext {
+    color: white;
+    font-size: 1.5em;
+}
+
+/* Правий блок: кнопка меню */
+.nav-right-mobile {
+    display: flex;
+    align-items: center;
+}
+
 /* Mobile Styles */
 @media (max-width: 768px) {
     .menu-toggle {
@@ -192,14 +219,12 @@ nav a:hover {
     .review-card {
         width: 90%;
     }
-}
-/* Медіазапит для екранів з шириною менше 768px */
-@media screen and (max-width: 768px) {
     .nav-mobile {
         display: block; /* Показуємо кнопку при малих екранах */
         top: 0; /* Додає явний відступ зверху для фіксованого позиціонування */
     }
 }
+
 /* Основний стиль для кнопки */
 .menu-button {
     background: none;
@@ -211,6 +236,7 @@ nav a:hover {
     justify-content: right;
     position: relative;
     left: 80%; /* Відступ справа */
+    top:-20px;
     z-index: 1000; /* Щоб кнопка була поверх інших елементів */
 }
 
@@ -253,5 +279,4 @@ nav a:hover {
     transform: rotate(45deg);
     margin: 0;
 }
-
 

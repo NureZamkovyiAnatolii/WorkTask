@@ -1,0 +1,103 @@
+#thank-you {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f5f5f5;
+}
+
+.thank-you-content {
+    text-align: center;
+    background: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+}
+
+.icon-container {
+    display: inline-block;
+    padding: 20px;
+    background-color: #4CAF50;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    animation: bounce 1.2s infinite;
+}
+
+.checkmark-icon {
+    font-size: 50px;
+    color: #fff;
+}
+
+.thank-you-title {
+    font-size: 36px;
+    margin: 20px 0;
+    animation: slideInFromTop 0.7s ease-out;
+}
+
+.thank-you-text {
+    font-size: 18px;
+    color: #666;
+    animation: slideInFromBottom 0.7s ease-out;
+}
+
+.back-home-button {
+    margin-top: 30px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+.back-home-button:hover {
+    background-color: #45a049;
+}
+
+/* Анімації */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromTop {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromBottom {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+}
