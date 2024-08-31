@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardiotensive</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="menu-toggle">&#9776;</div>
+    <nav>
+        <div class="nav-left">
+            <img class="logo" src="img/logo.png" alt="Cardiotensive">
+            <h2 class="logotext">Cardiotensive</h2>
+        </div>
+        <div class="nav-right">
+            <a href="#product">О продукте</a>
+            <a href="#reviews">Отзывы</a>
+            <a href="#contact">Контакты</a>
+        </div>
+    </nav>
+    <nav class="nav-mobile">
+        <button class="menu-button" id="menu-toggle">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </button>
+        <div class="menu-content">
+            <a class="a-mobile" href="#product">О продукте</a>
+            <a class="a-mobile" href="#reviews">Отзывы</a>
+            <a class="a-mobile" href="#contact">Контакты</a>
+        </div>
+    </nav>
+
+    <script>
+        document.querySelector('.logotext').addEventListener('click', function () {
+            document.querySelector('.banner').scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+        document.getElementById('menu-toggle').addEventListener('click', function () {
+            this.classList.toggle('active');
+            document.querySelector('.menu-content').classList.toggle('show');
+            const menuContent = document.querySelector('.menu-content');
+            menuContent.classList.toggle('active');
+            // Зміна відступу для банера
+            const banner = document.querySelector('.banner');
+            if (menuContent.classList.contains('show')) {
+                banner.style.marginTop = menuContent.offsetHeight + 'px';
+            } else {
+                banner.style.marginTop = '0';
+            }
+        });
+// JavaScript
+// Використання класу для роботи з декількома посиланнями
+document.querySelectorAll('.a-mobile').forEach(function (link) {
+        link.addEventListener('click', function () {
+            const menuToggle = document.querySelector('.menu-toggle');
+            menuToggle.classList.toggle('active');
+            document.querySelector('.menu-content').classList.toggle('show');
+            const menuContent = document.querySelector('.menu-content');
+            menuContent.classList.toggle('active');
+            // Зміна відступу для банера
+            const banner = document.querySelector('.banner');
+            if (menuContent.classList.contains('show')) {
+                banner.style.marginTop = menuContent.offsetHeight + 'px';
+            } else {
+                banner.style.marginTop = '0';
+            }
+        });
+    });
+    </script>
+
+    <section class="banner">
+        <h1>Cardiotensive</h1>
+        <p>Ваш надійний помічник у підтримці здоров'я серцево-судинної системи</p>
+    </section>
+
+    <section id="product" class="section product-info">
+        <h2>О продукте</h2>
+        <div class="product-info-container">
+            <div class="block">
+                <img src="img/icon1.jpg" alt="Icon 1">
+                <h3>Зміцнення серця</h3>
+                <p>Завдяки високому вмісту антиоксидантів продукт зміцнює серцевий м'яз.</p>
+            </div>
+            <div class="block">
+                <img src="img/icon2.jpg" alt="Icon 2">
+                <h3>Зниження тиску</h3>
+                <p>Cardiotensive ефективно допомагає контролювати артеріальний тиск, знижуючи ризик гіпертонії.</p>
+            </div>
+            <div class="block">
+                <img src="img/icon3.jpeg" alt="Icon 3">
+                <h3>Очищення судин</h3>
+                <p>Натуральні компоненти продукту сприяють очищенню судин від холестерину та токсинів.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="reviews" class="section reviews">
+        <h2>Отзывы</h2>
+        <div class="review-card">
+            <img src="img/user1.jpg" alt="User 1">
+            <h4>Олександр К.</h4>
+            <p>"Приймаю Cardiotensive вже місяць, і моє самопочуття значно покращилось. Тиск став стабільним, і я
+                почуваюся набагато краще."</p>
+        </div>
+        <div class="review-card">
+            <img src="img/user2.jpg" alt="User 2">
+            <h4>Наталія В.</h4>
+            <p>"Цей продукт став справжнім порятунком для мене. Нарешті знайшла щось, що реально допомагає з тиском."
+            </p>
+        </div>
+        <div class="review-card">
+            <img src="img/user3.jpg" alt="User 3">
+            <h4>Іван М.</h4>
+            <p>"Рекомендую всім, хто має проблеми з тиском. Cardiotensive працює ефективно і без побічних ефектів."</p>
+        </div>
+    </section>
+
+    <section id="contact" class="section form-container">
+        <h2>Контакти</h2>
+        <form action="thank-you.html" method="post">
+            <input type="text" name="name" placeholder="Имя" required>
+            <input type="tel" name="phone" placeholder="Телефон" required>
+            <button type="submit">Отправить</button>
+        </form>
+    </section>
+
+    <!-- Thank You Page -->
+    <div id="thank-you" style="display:none;">
+        <section class="section">
+            <h2>Спасибо!</h2>
+            <p>Ваша заявка успішно прийнята. Оператор скоро зв'яжеться з вами.</p>
+        </section>
+    </div>
+
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function () {
+            document.querySelector('nav').classList.toggle('active');
+        });
+    </script>
+</body>
+
+</html>

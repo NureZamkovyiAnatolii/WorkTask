@@ -1,0 +1,257 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: padding-top 0.3s ease; /* Додаємо плавний перехід */
+    padding-top: 0; /* Початкове значення відступу */
+}
+
+.menu-content.show ~ body {
+    padding-top: 150px; /* Відступ зверху для body, коли меню відкрите */
+}
+header {
+    text-align: center;
+    padding: 10px;
+    background: #f8f8f8;
+    border-bottom: 1px solid #ddd;
+}
+header img {
+    max-width: 150px;
+    height: auto;
+}
+nav {
+    position: fixed; /* Закріплює меню */
+    width: 100%; /* Ширина меню на всю сторінку */
+    display: flex;
+    justify-content: space-between; /* Розподіл елементів між краями контейнера */
+    background: #333;
+    padding: 10px;
+}
+.nav-left {
+    display: flex;
+}
+.nav-left .logo{
+    max-height: 30px;
+    height: auto;
+}
+/* Текст логотипу */
+nav .logotext {
+    margin: 0;
+    font-size: 1.5em; /* Розмір шрифту для тексту логотипу */
+    transform: translateY(10%); /* Піднімає заголовок на 50% від його висоти */
+    color: white;
+}
+.nav-right {
+    display: flex;
+    align-items: center; /* Вирівнює посилання по вертикалі по центру */
+}
+.nav-right a {
+    margin-left: 20px; /* Відступи між посиланнями */
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+}
+nav a:hover {
+    background: #c57d7d;
+}
+.nav-right .menu-button {
+    display: none; /* Приховуємо кнопку за замовчуванням */
+}
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    color: white;
+    font-size: 24px;
+    padding: 10px;
+}
+.banner {
+    top: 100px;
+    background-size: cover;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    padding: 60px 20px;
+}
+
+.banner h1 {
+    margin: 0;
+    font-size: 2.5em;
+    margin-top: 40px; /* Відступ зверху для банера */
+}
+
+.banner p {
+    margin-bottom: 20px; /* Відступ між параграфом і наступним елементом, якщо потрібно */
+}
+/* Заголовок секції */
+.product-info h2 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px; /* Відступ під заголовком */
+}
+
+/* Контейнер для блоків з інформацією про продукт */
+.product-info-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px; /* Відстань між блоками */
+}
+
+/* Стиль для кожного блоку */
+.product-info .block {
+    flex: 1;
+    max-width: 30%;
+    text-align: center;
+    padding: 10px;
+    background: #f8f8f8;
+    border-radius: 10px;
+}
+
+/* Зображення в блоках */
+.product-info .block img {
+    max-width: 300px;
+    height: auto;
+    margin-bottom: 10px;
+}
+.reviews {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.review-card {
+    background: #f0f0f0;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 15px;
+    width: 80%;
+    max-width: 300px;
+    text-align: center;
+}
+.review-card img {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+}
+.form-container {
+    text-align: center;
+    padding: 20px;
+}
+.form-container form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+.form-container input,
+.form-container button {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.form-container button {
+    background: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.form-container button:hover {
+    background: #555;
+}
+.nav-mobile{
+    display:none;
+}
+
+/* Оновлені стилі для адаптивності */
+@media (max-width: 768px) {
+    .product-info-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .product-info .block {
+        max-width: 90%;
+    }
+}
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+    nav {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+    }
+    nav.active {
+        display: flex;
+    }
+    .product-info {
+        flex-direction: column;
+    }
+    .review-card {
+        width: 90%;
+    }
+}
+/* Медіазапит для екранів з шириною менше 768px */
+@media screen and (max-width: 768px) {
+    .nav-mobile {
+        display: block; /* Показуємо кнопку при малих екранах */
+        top: 0; /* Додає явний відступ зверху для фіксованого позиціонування */
+    }
+}
+/* Основний стиль для кнопки */
+.menu-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    position: relative;
+    left: 80%; /* Відступ справа */
+    z-index: 1000; /* Щоб кнопка була поверх інших елементів */
+}
+
+.menu-button .bar {
+    width: 30px;
+    height: 3px;
+    background: #ab8c8c;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+.menu-content {
+    display: none;
+    flex-direction: column;
+}
+.menu-content.active {
+    display: flex;
+    flex-direction: column;
+}
+.menu-content a {
+    margin-bottom: 10px; /* Додатковий відступ між елементами */
+    font-size: 2em;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    position: relative;
+    left: 5%;
+}
+
+/* Анімація для перетворення кнопки */
+.menu-button.active .bar:nth-child(1) {
+    transform: rotate(-45deg);
+    margin: 0;
+}
+
+.menu-button.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-button.active .bar:nth-child(3) {
+    transform: rotate(45deg);
+    margin: 0;
+}
+
+
